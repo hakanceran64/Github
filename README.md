@@ -29,7 +29,7 @@ Git kullanmaya başlamadan önce terminal üzerinden git loglar vb için kullan�
 
 ---
 
-## Proje Oluşturma ve Projeyi Klonlama
+## Getting and Creating Projects (Proje Oluşturma ve Projeyi Klonlama)
 
 Mevcut projeniz için yeni bir Git Deposu oluşturun.
 
@@ -54,4 +54,82 @@ Mevcut projenizi buluttan local alanınıza indirin.
 > git clone https://github.com/hakanceran64/Github.git (git_address)
 
 ```
+---
 
+## Basic Snapshotting (Temel Anlık Görüntü)
+
+```Bash
+
+# Dosya İçeriğini dizine ekleyin.
+> git add .
+
+# 
+> git status
+
+#
+> git diff
+
+#
+> git commit
+
+#
+> git notes
+
+#
+> git restore
+
+#
+> git reset
+
+#
+> git rm
+
+#
+> git mv
+
+
+```
+
+---
+
+## Branching and Merging (Dallanma ve Birleşme)
+
+```Bash
+
+> git branch
+> checkout
+> switch
+> merge
+> mergetool
+> log
+> stash
+> tag
+> worktree
+
+```
+
+---
+
+## Sharing and Updating Projects (Projeleri Paylaşma ve Güncelleme)
+
+```Bash
+
+# remote'daki master branch'ini locale güncelle
+> fetch origin master
+
+#
+> pull
+
+# Yerel reponuzu uzak repoya transfer eder.
+> git push [alias] [branch]
+
+# takma ad kullanarak bir git url'si belirleyin.
+> git remote add [alias (takma ad)] [url]
+
+# Örnek
+> git remote add origin https://github.com/hakanceran64/Github.git
+
+#
+> submodule
+
+```
