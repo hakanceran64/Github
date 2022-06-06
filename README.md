@@ -5,6 +5,7 @@
 Git kullanmaya başlamadan önce terminal üzerinden git loglar vb için kullanıcı adı ve kullanıcı e-posta adresi tanımlamanız gerekmektedir. Bu bilgiler commit ettiğinizde kimin tarafından commit edilmiş bilgisini tutmak için kullanılacaktır. Aynı zamanda local alanınızda çalıştığınız projeyi Github'a yüklediğinizde de burada tanımlanan kullanıcı adı ve kullanıcı e-posta adresi üzerinden yükleme yapacaktır.
 
 * ### Kullanıcı adı
+
     ```Bash
 
     # Kullanıcı adını öğrenmek için
@@ -16,6 +17,7 @@ Git kullanmaya başlamadan önce terminal üzerinden git loglar vb için kullan�
     ```
 
 * ### Kullanıcı E-Posta
+
     ```Bash
 
     # Kullanıcı E-Posta adresini öğrenmek için
@@ -31,7 +33,9 @@ Git kullanmaya başlamadan önce terminal üzerinden git loglar vb için kullan�
 ## Getting and Creating Projects (Proje Oluşturma ve Projeyi Klonlama)
 
 * ### Repository Oluşturma
+
     Mevcut projeniz için yeni bir Git Deposu oluşturun.
+
     ```Bash
 
     # Bir .git dizini oluşturun.
@@ -48,7 +52,9 @@ Git kullanmaya başlamadan önce terminal üzerinden git loglar vb için kullan�
     ```
 
 * ### git clone
+
     Remote repository'yi yerek diskinize indirir.
+
     ```Bash
 
     # Sözde Kod
@@ -62,6 +68,9 @@ Git kullanmaya başlamadan önce terminal üzerinden git loglar vb için kullan�
 ---
 
 ## Basic Snapshotting (Temel Anlık Görüntü)
+
+* ### Açıklama Basic Snapshotting
+
     ```Bash
 
     # Dosya İçeriğini dizine ekleyin.
@@ -91,33 +100,38 @@ Git kullanmaya başlamadan önce terminal üzerinden git loglar vb için kullan�
     #
     > git mv
 
-
     ```
 
 ---
 
 ## Branching and Merging (Dallanma ve Birleşme)
+
+* ### Açıklama Branching and Merging
+
     ```Bash
-
-    > git branch
-    > checkout
-    > switch
-    > merge
-    > mergetool
-    > log
-    > stash
-    > tag
-    > worktree
-
+        
+        > git branch
+        > checkout
+        > switch
+        > merge
+        > mergetool
+        > log
+        > stash
+        > tag
+        > worktree
+    
     ```
 
 ---
 
 ## Sharing and Updating Projects (Projeleri Paylaşma ve Güncelleme)
+
 Başka bir repodaki güncellemeleri alma ve yerel repoları güncelleme komutları.
 
-* ### git remote:
+* ### git remote
+
     Güncelleme yapabilmeniz için uzak reponun url'sini tanımlamanız gerekmektedir. (Bu işlem yalnızca bir kereye mahsustur.)
+
     ```Bash
 
     # takma ad (alias) kullanarak bir git url'si belirleyin.
@@ -129,7 +143,9 @@ Başka bir repodaki güncellemeleri alma ve yerel repoları güncelleme komutlar
     ```
 
 * ### git fetch
+
     Uzak reponuzda takım arkadaşlarınız güncelleme yapmış olsun. Bu güncellemeleri bilgisayarınıza indirip incelemek için git fetch (fetch türkçe anlamı getirmek) komutunu kullanabilirsiniz.
+
     ```Bash
 
     # remote'daki reponuzu local'inize indirir.
@@ -147,7 +163,9 @@ Başka bir repodaki güncellemeleri alma ve yerel repoları güncelleme komutlar
     ```
 
 * ### git pull
+
     git fetch ile local'inize indirdiğiniz değişikleri merge etmek istiyorsanuz git pull (pull türkçe anlamı çekmek) yapabilirsiniz. *git pull = git fetch + git merge* olarak düşünebilirsiniz. Birçok geliştirici git pull kullanmayı tavsiye etmiyor. Detaylar için *Git: fetch and merge, don't pull* aramasını yapabilirsiniz.
+
     ```Bash
 
     #
@@ -156,11 +174,13 @@ Başka bir repodaki güncellemeleri alma ve yerel repoları güncelleme komutlar
     ```
 
 * ### git push
+
     Local değişikliklerinizi online reponuza göndermek için kullanılır. *git push* yapmadığınız sürece bütün değişikler yalnızca sizin bilgisayarınızda saklanır. Ekip arkadaşlarınızın da değişiklikleri görmesini istiyorsanız *git push* yaparak değişiklikleri remote reponuza uygulayabilirsiniz.
 
     *git push* komutu iki adet argüman alır.
-    * a remote name: origin
-    * a branch name: main
+  * a remote name: origin
+  * a branch name: main
+
     ```Bash
 
     # Yerel reponuzu uzak repoya transfer eder.
@@ -174,6 +194,7 @@ Başka bir repodaki güncellemeleri alma ve yerel repoları güncelleme komutlar
     ```
 
 * ### git submodule
+
     ```Bash
 
     #
@@ -186,6 +207,7 @@ Başka bir repodaki güncellemeleri alma ve yerel repoları güncelleme komutlar
 ## Faydalı Linkler
 
 * [Türkçe Git 101](https://aliozgur.gitbooks.io/git101/content/)
-* 
+
+*
 
 ---
