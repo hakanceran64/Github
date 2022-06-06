@@ -4,132 +4,188 @@
 
 Git kullanmaya başlamadan önce terminal üzerinden git loglar vb için kullanıcı adı ve kullanıcı e-posta adresi tanımlamanız gerekmektedir. Bu bilgiler commit ettiğinizde kimin tarafından commit edilmiş bilgisini tutmak için kullanılacaktır. Aynı zamanda local alanınızda çalıştığınız projeyi Github'a yüklediğinizde de burada tanımlanan kullanıcı adı ve kullanıcı e-posta adresi üzerinden yükleme yapacaktır.
 
-### Kullanıcı adı
+* ### Kullanıcı adı
+    ```Bash
 
-```Bash
+    # Kullanıcı adını öğrenmek için
+    > git config --global user.name
 
-# Kullanıcı adını öğrenmek için
-> git config --global user.name
+    # Kullanıcı adını değiştirin
+    > git config --global user.name "Hakan CERAN"
 
-# Kullanıcı adını değiştirin
-> git config --global user.name "Hakan CERAN"
+    ```
 
-```
+* ### Kullanıcı E-Posta
+    ```Bash
 
-### Kullanıcı E-Posta
+    # Kullanıcı E-Posta adresini öğrenmek için
+    > git config --global user.email
 
-```Bash
+    # Kullanıcı E-Posta adresini değiştirin
+    > git config --global user.email "hakanceran64@gmail.com"
 
-# Kullanıcı E-Posta öğrenmek için
-> git config --global user.email
-
-# Kullanıcı E-Posta değiştirin
-> git config --global user.email "hakanceran64@gmail.com"
-```
+    ```
 
 ---
 
 ## Getting and Creating Projects (Proje Oluşturma ve Projeyi Klonlama)
 
-Mevcut projeniz için yeni bir Git Deposu oluşturun.
+* ### Repository Oluşturma
+    Mevcut projeniz için yeni bir Git Deposu oluşturun.
+    ```Bash
 
-```Bash
+    # Bir .git dizini oluşturun.
+    > git init
 
-# Bir .git dizini oluşturun.
-> git init
+    # Tüm dosyaları dizine ekleyin.
+    > git add .
 
-# Tüm dosyaları dizine ekleyin.
-> git add .
+    # Projenizin güncel halini commit yaparak history'ye kayıt edin.
+    > git commit -m "commit mesajınızı buraya yazın."
 
-# Projenizin güncel halini commit yaparak history'ye kayıt edin.
-> git commit 
+    # Tebrikler projenizin yeni bir versiyonunu oluşturdunuz.
 
-# Tebrikler projenizin yeni bir versiyonunu oluşturdunuz.
-```
+    ```
 
-Mevcut projenizi buluttan local alanınıza indirin.
+* ### git clone
+    Remote repository'yi yerek diskinize indirir.
+    ```Bash
 
-```Bash
+    # Sözde Kod
+    > git clone [url]
 
-> git clone https://github.com/hakanceran64/Github.git (git_address)
+    # Örnek:
+    > git clone https://github.com/hakanceran64/Github.git
 
-```
+    ```
+
 ---
 
 ## Basic Snapshotting (Temel Anlık Görüntü)
+    ```Bash
 
-```Bash
+    # Dosya İçeriğini dizine ekleyin.
+    > git add .
 
-# Dosya İçeriğini dizine ekleyin.
-> git add .
+    # 
+    > git status
 
-# 
-> git status
+    #
+    > git diff
 
-#
-> git diff
+    #
+    > git commit
 
-#
-> git commit
+    #
+    > git notes
 
-#
-> git notes
+    #
+    > git restore
 
-#
-> git restore
+    #
+    > git reset
 
-#
-> git reset
+    #
+    > git rm
 
-#
-> git rm
-
-#
-> git mv
+    #
+    > git mv
 
 
-```
+    ```
 
 ---
 
 ## Branching and Merging (Dallanma ve Birleşme)
+    ```Bash
 
-```Bash
+    > git branch
+    > checkout
+    > switch
+    > merge
+    > mergetool
+    > log
+    > stash
+    > tag
+    > worktree
 
-> git branch
-> checkout
-> switch
-> merge
-> mergetool
-> log
-> stash
-> tag
-> worktree
-
-```
+    ```
 
 ---
 
 ## Sharing and Updating Projects (Projeleri Paylaşma ve Güncelleme)
+Başka bir repodaki güncellemeleri alma ve yerel repoları güncelleme komutları.
 
-```Bash
+* ### git remote:
+    Güncelleme yapabilmeniz için uzak reponun url'sini tanımlamanız gerekmektedir. (Bu işlem yalnızca bir kereye mahsustur.)
+    ```Bash
 
-# remote'daki master branch'ini locale güncelle
-> fetch origin master
+    # takma ad (alias) kullanarak bir git url'si belirleyin.
+    > git remote add [alias] [url]
 
-#
-> pull
+    # Örnek
+    > git remote add origin https://github.com/hakanceran64/Github.git
 
-# Yerel reponuzu uzak repoya transfer eder.
-> git push [alias] [branch]
+    ```
 
-# takma ad kullanarak bir git url'si belirleyin.
-> git remote add [alias (takma ad)] [url]
+* ### git fetch
+    Uzak reponuzda takım arkadaşlarınız güncelleme yapmış olsun. Bu güncellemeleri bilgisayarınıza indirip incelemek için git fetch (fetch türkçe anlamı getirmek) komutunu kullanabilirsiniz.
+    ```Bash
 
-# Örnek
-> git remote add origin https://github.com/hakanceran64/Github.git
+    # remote'daki reponuzu local'inize indirir.
+    > git fetch [alias]
 
-#
-> submodule
+    # Örnek: daha önce origin takma adı ile remote'da bulunan repomuzu local'de incelemek için indirir.
+    > git fetch origin
 
-```
+    # Log'ları inceleyin.
+    > git log
+
+    # İki repo arasındaki farkları inceleyin
+    > git diff
+
+    ```
+
+* ### git pull
+    git fetch ile local'inize indirdiğiniz değişikleri merge etmek istiyorsanuz git pull (pull türkçe anlamı çekmek) yapabilirsiniz. *git pull = git fetch + git merge* olarak düşünebilirsiniz. Birçok geliştirici git pull kullanmayı tavsiye etmiyor. Detaylar için *Git: fetch and merge, don't pull* aramasını yapabilirsiniz.
+    ```Bash
+
+    #
+    > git pull
+
+    ```
+
+* ### git push
+    Local değişikliklerinizi online reponuza göndermek için kullanılır. *git push* yapmadığınız sürece bütün değişikler yalnızca sizin bilgisayarınızda saklanır. Ekip arkadaşlarınızın da değişiklikleri görmesini istiyorsanız *git push* yaparak değişiklikleri remote reponuza uygulayabilirsiniz.
+
+    *git push* komutu iki adet argüman alır.
+    * a remote name: origin
+    * a branch name: main
+    ```Bash
+
+    # Yerel reponuzu uzak repoya transfer eder.
+    > git push [alias] [branch_name]
+
+    # Örnek
+    > git add .
+    > git commit -m "commit description"
+    > git push origin main
+
+    ```
+
+* ### git submodule
+    ```Bash
+
+    #
+    > submodule
+
+    ```
+
+---
+
+## Faydalı Linkler
+
+* [Türkçe Git 101](https://aliozgur.gitbooks.io/git101/content/)
+* 
+
+---
